@@ -7,7 +7,7 @@ from sklearn import datasets
 from sklearn.decomposition import PCA
 from collections import defaultdict
 from scipy.linalg import sqrtm, inv
-import grand_schmidt
+import gram_schmidt
 from random import uniform
 from sklearn import cross_validation
 from sklearn import svm
@@ -69,7 +69,7 @@ class classSparser(object):
             _i+=1
 
         centroids_matrix = np.array(centroids_matrix)
-        ortho_centroids_matrix = np.array(grand_schmidt.gs(centroids_matrix))
+        ortho_centroids_matrix = np.array(gram_schmidt.gs(centroids_matrix))
         ortho_centroids_matrix = normalize(ortho_centroids_matrix)
 
         print '*Centroids matrix',centroids_matrix
